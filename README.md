@@ -7,3 +7,10 @@ Visual Studio project including a code (Fortran; development version) to obtain 
 Notes: 
 Post-stall detached vorticity model is under development/testing (do not use yet).
 For v2, circulation distributions are numerically symmetrical (for non-sideslip condition) but due to transparency level in post-processor cannot be adjusted manually, these look slight asymmetrical.
+
+BUG detected in v1.1: 
+In subrutine vind_vxlat, change:
+if (a_v>=eps) then 
+
+instead of:
+if (a_v>=core_rad) then
